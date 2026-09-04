@@ -4,6 +4,65 @@ Self-supervised (SimCLR) pretraining on infant cry spectrograms, followed
 by 5-fold stratified cross-validation of a classifier built on the frozen
 encoder.
 
+## Pipeline
+
+The full pipeline follows the generalized workflow used across recent
+infant cry classification / SSL literature: raw audio → time–frequency
+representation → contrastive pretraining → supervised fine-tuning →
+evaluation & explainability.
+
+```
+┌─────────────────────┐
+│  1. AUDIO PREPROCESSING
+│  ─────────────────────
+│  • Load audio (resample to target rate, e.g. 16 kHz)
+│  • Segment into fixed-length windows (e.g. 1s, with overlap)
+│  • Denoise (noisereduce / spectral subtraction / band-pass filtering)
+│  • Normalize each segment (peak or RMS normalization)
+└─────────────────────┘
+           │
+           ▼
+┌─────────────────────┐
+│  2. FEATURE EXTRACTION
+│  ─────────────────────
+│  • Convert each audio segment into a time–frequency image
+│    - Continuous Wavelet Transform (CWT) scalogram (Morlet wavelet), or
+│    - Spectrogram / log-Mel spectrogram
+│  • Save images in ImageFolder-compatible layout (data/cry_images/<class>/)
+└─────────────────────┘
+           │
+           ▼
+┌─────────────────────┐
+│  3. SELF-SUPERVISED PRETRAINING (SimCLR)
+│  ─────────────────────
+│  • Generate two augmented views per image (random crop, flip,
+│    color jitter, grayscale) via SimCLRTransform
+│  • Pass both views through a shared encoder (e.g. ResNet-18/34,
+│    EfficientNet-B0) + projection head
+│  • Maximize agreement between views with NT-Xent (contrastive) loss
+│  • Save the pretrained encoder weights
+└─────────────────────┘
+           │
+           ▼
+┌─────────────────────┐
+│  4. SUPERVISED FINE-TUNING / CLASSIFICATION
+│  ─────────────────────
+│  • Load the pretrained encoder (frozen or unfrozen)
+│  • Attach a fully-connected classification head
+│  • Fine-tune with cross-entropy loss on labeled cry categories
+│  • Evaluate with 5-fold (stratified) cross-validation
+└─────────────────────┘
+           │
+           ▼
+┌─────────────────────┐
+│  5. MODEL EVALUATION & EXPLAINABILITY
+│  ─────────────────────
+│  • Standard metrics: accuracy, precision, recall, F1-score (per class)
+│  • Grad-CAM: visualize discriminative regions of the time–frequency image
+│  • Edge-enhanced / sharpened saliency maps for finer interpretation
+└─────────────────────┘
+```
+
 ## Project structure
 
 ```
