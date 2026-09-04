@@ -116,14 +116,14 @@ in ImageFolder format. Each subfolder corresponds to a cry category.
 | `cry_images/tired/` | Spectrogram images corresponding to tired cries | |
 
 ## Usage
-
-1. **Pretrain the SimCLR encoder** on unlabeled spectrograms:
+**Pretrain the SimCLR encoder** on unlabeled spectrograms:
    ```bash
    python src/train_simclr.py
    ```
    Saves encoder weights to `results/checkpoints/simclr_encoder.pt`.
+   
 
-2. **Run 5-fold cross-validation** with the frozen encoder:
+**Run 5-fold cross-validation** with the frozen encoder:
    ```bash
    python src/kfold_eval.py
    ```
@@ -131,6 +131,19 @@ in ImageFolder format. Each subfolder corresponds to a cry category.
 
 All paths and hyperparameters (batch size, learning rate, epochs, number
 of folds, etc.) are controlled from `config.yaml`.
+### Training Checkpoints
+
+The trained model checkpoints are organized by fold and training epoch.
+
+| Folder/File | Description | Link |
+|---|---|---|
+| `results/checkpoints/` | Root directory containing all trained model checkpoints |  |
+| `results/checkpoints/fold0/` | Fold 0 model checkpoints | |
+| `results/checkpoints/fold0_epoch1.pth` | Fold 0 checkpoint after epoch 1 | [Google Drive](https://drive.google.com/file/d/1T6zEuu3rxXwCfwg9iPnCMtQeKst4gFNe/view?usp=sharing) |
+| `results/checkpoints/fold0_epoch2.pth` | Fold 0 checkpoint after epoch 2 | [Google Drive](YOUR_CHECKPOINTS_LINK) |
+| `results/checkpoints/fold0_epoch3.pth` | Fold 0 checkpoint after epoch 3 |[Google Drive](YOUR_CHECKPOINTS_LINK) |
+| `results/checkpoints/fold0_epoch4.pth` | Fold 0 checkpoint after epoch 4 | [Google Drive](YOUR_CHECKPOINTS_LINK)|
+| `results/checkpoints/fold0_epoch5.pth` | Fold 0 checkpoint after epoch 5 |[Google Drive](YOUR_CHECKPOINTS_LINK) |
 
 ## Notebooks
 
