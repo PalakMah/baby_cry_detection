@@ -101,6 +101,19 @@ python src/data_prep.py
 
 This generates spectrogram images under `data/cry_images/<class>/*.png`,
 in an `ImageFolder`-compatible layout.
+## Preprocessed Cry Images
+
+The `cry_images/` directory contains preprocessed spectrogram images organized
+in ImageFolder format. Each subfolder corresponds to a cry category.
+
+| Folder | Description | Link |
+|---|---|---|
+| `cry_images/` | Root directory containing all preprocessed spectrogram images | [Google Drive](https://drive.google.com/drive/folders/1xiflVsmocWhlAqTm4-cNn1ThzF1ECNpU?usp=sharing) |
+| `cry_images/hungry/` | Spectrogram images corresponding to hungry cries | |
+| `cry_images/pain/` | Spectrogram images corresponding to pain cries | |
+| `cry_images/burping/` | Spectrogram images corresponding to burping cries | |
+| `cry_images/discomfort/` | Spectrogram images corresponding to discomfort cries | |
+| `cry_images/tired/` | Spectrogram images corresponding to tired cries | |
 
 ## Usage
 
