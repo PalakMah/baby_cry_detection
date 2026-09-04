@@ -1,0 +1,12 @@
+librosa
+PyWavelets
+noisereduce
+scikit-learn
+torch
+torchvision
+numpy
+scipy
+Pillow
+tqdm
+matplotlib
+PyYAML
