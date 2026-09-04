@@ -140,10 +140,10 @@ The trained model checkpoints are organized by fold and training epoch.
 | `results/checkpoints/` | Root directory containing all trained model checkpoints |  |
 | `results/checkpoints/fold0/` | Fold 0 model checkpoints | |
 | `results/checkpoints/fold0_epoch1.pth` | Fold 0 checkpoint after epoch 1 | [Google Drive](https://drive.google.com/file/d/1T6zEuu3rxXwCfwg9iPnCMtQeKst4gFNe/view?usp=sharing) |
-| `results/checkpoints/fold0_epoch2.pth` | Fold 0 checkpoint after epoch 2 | [Google Drive](YOUR_CHECKPOINTS_LINK) |
-| `results/checkpoints/fold0_epoch3.pth` | Fold 0 checkpoint after epoch 3 |[Google Drive](YOUR_CHECKPOINTS_LINK) |
-| `results/checkpoints/fold0_epoch4.pth` | Fold 0 checkpoint after epoch 4 | [Google Drive](YOUR_CHECKPOINTS_LINK)|
-| `results/checkpoints/fold0_epoch5.pth` | Fold 0 checkpoint after epoch 5 |[Google Drive](YOUR_CHECKPOINTS_LINK) |
+| `results/checkpoints/fold0_epoch2.pth` | Fold 0 checkpoint after epoch 2 | [Google Drive](https://drive.google.com/file/d/1Nb6T6DIALIrrTu52cKKfd3F5S-Sr6NYl/view?usp=sharing) |
+| `results/checkpoints/fold0_epoch3.pth` | Fold 0 checkpoint after epoch 3 |[Google Drive](https://drive.google.com/file/d/1PLzzEPzhkAhBbhqPUPHTIP7TfkomJVXq/view?usp=sharing) |
+| `results/checkpoints/fold0_epoch4.pth` | Fold 0 checkpoint after epoch 4 | [Google Drive](https://drive.google.com/file/d/10cqIkvaGoo4mj4hut8ANF3W_1abKQkHQ/view?usp=sharing)|
+| `results/checkpoints/fold0_epoch5.pth` | Fold 0 checkpoint after epoch 5 |[Google Drive](https://drive.google.com/file/d/1dKYNsBjaCEalwGxN5q2M1YH2T8RbLqSJ/view?usp=sharing) |
 
 ## Notebooks
 
