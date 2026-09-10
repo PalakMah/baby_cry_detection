@@ -22,7 +22,7 @@ evaluation & explainability.
 └─────────────────────┘
            │
            ▼
-┌─────────────────────┐
+┌────────────────────
 │  2. FEATURE EXTRACTION
 │  ─────────────────────
 │  • Convert each audio segment into a time–frequency image
